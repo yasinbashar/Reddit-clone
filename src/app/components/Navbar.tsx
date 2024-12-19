@@ -3,12 +3,8 @@
 import React, { useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import SidebarContent from "./SidebarContent";
-import {
-  FaUser,
-  FaBullhorn,
-  FaShoppingCart,
-  FaEllipsisH,
-} from "react-icons/fa";
+import { FaUser, FaBullhorn, FaShoppingCart, FaEllipsisH } from "react-icons/fa";
+import MainFeed from "./MainFeed";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -43,9 +39,7 @@ const Navbar = () => {
             </div>
 
             <div
-              className={`flex-1 mx-4 relative ${
-                isSearchFocused ? "bg-white shadow-md" : ""
-              } flex justify-center`}
+              className={`flex-1 mx-4 relative ${isSearchFocused ? "bg-white shadow-md" : ""} flex justify-center`}
             >
               <div className="relative w-full max-w-md">
                 <input
@@ -103,13 +97,30 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="hidden md:block fixed left-0 top-12 w-64 h-[calc(100vh-3rem)] bg-white border-r border-gray-200 overflow-y-auto p-4">
-        <SidebarContent />
+      {/* Main Content Area */}
+      <div className="flex pt-12 w-full">
+        {/* Sidebar */}
+        <div className="w-full md:w-3/12 bg-white border-r border-gray-200 p-4 hidden md:block">
+          <SidebarContent />
+        </div>
+
+        {/* Main Feed */}
+        <div className="w-full md:w-6/12 bg-gray-100 p-4">
+          <h2>Main Feed</h2>
+          <MainFeed post={undefined}/>
+        </div>
+
+        {/* Right Section (Popular Communities) */}
+        <div className="w-full md:w-3/12 bg-white border-l border-gray-200 p-4 hidden md:block">
+          <h2>Popular Communities</h2>
+          {/* Your right section content goes here */}
+        </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
-          <div className="w-64 h-full bg-white overflow-y-auto p-4">
+          <div className="w-64 h-full bg-white overflow-y-auto p-4 z-50">
             <SidebarContent />
           </div>
         </div>

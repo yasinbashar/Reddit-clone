@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "userPhoto": "/default-user.png",
+      "username": "JohnDoe",
+      "time": "Just now",
+      "caption": "Exploring the beauty of nature!",
+      "image": "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+      "likes": 25,
+      "comments": 10
+    },
+    {
+      "id": 2,
+      "userPhoto": "/default-user.png",
+      "username": "JaneSmith",
+      "time": "2 hr ago",
+      "caption": "This is the most exciting experience I've ever had!",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+      "likes": 40,
+      "comments": 18
+    }
+  ]
+  
