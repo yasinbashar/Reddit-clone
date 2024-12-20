@@ -3,8 +3,13 @@
 import React, { useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import SidebarContent from "./SidebarContent";
-import { FaUser, FaBullhorn, FaShoppingCart, FaEllipsisH } from "react-icons/fa";
-import MainFeed from "./MainFeed";
+import {
+  FaUser,
+  FaBullhorn,
+  FaShoppingCart,
+  FaEllipsisH,
+} from "react-icons/fa";
+import PopularCommunities from "./PopularCommunity";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -97,25 +102,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Main Content Area */}
-      <div className="flex pt-12 w-full">
-        {/* Sidebar */}
-        <div className="w-full md:w-3/12 bg-white border-r border-gray-200 p-4 hidden md:block">
-          <SidebarContent />
-        </div>
-
-        {/* Main Feed */}
-        <div className="w-full md:w-6/12 bg-gray-100 p-4">
-          <h2>Main Feed</h2>
-          <MainFeed post={undefined}/>
-        </div>
-
-        {/* Right Section (Popular Communities) */}
-        <div className="w-full md:w-3/12 bg-white border-l border-gray-200 p-4 hidden md:block">
-          <h2>Popular Communities</h2>
-          {/* Your right section content goes here */}
-        </div>
+      {/* Sidebar */}
+      <div className="hidden md:block fixed left-0 top-12 w-64 h-[calc(100vh-3rem)] bg-white border-r border-gray-200 overflow-y-auto p-4 z-30">
+        <SidebarContent />
       </div>
+      {/* <PopularCommunities/> */}
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (

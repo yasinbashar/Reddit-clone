@@ -3,6 +3,7 @@
 
 import { FaThumbsUp, FaThumbsDown, FaComment, FaShare, FaFlag } from "react-icons/fa";
 import { useState } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 interface Post {
     id: number;
@@ -26,11 +27,10 @@ interface Post {
     <div className="bg-white shadow-md rounded-lg p-4 mb-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img
-            src={post.userPhoto}
-            alt={`${post.username}'s profile`}
-            className="w-10 h-10 rounded-full"
-          />
+          <Avatar>
+            <AvatarImage src={"https://avatars.githubusercontent.com/u/124599?v=4"} />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
           <div>
             <h4 className="font-semibold">{post.username}</h4>
             <p className="text-gray-500 text-sm">{post.time}</p>
